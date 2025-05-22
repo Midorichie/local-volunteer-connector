@@ -1,12 +1,28 @@
+[project]
 name = "local-volunteer-connector"
-version = "0.1.0"
+version = "0.2.0"
+description = "A decentralized platform connecting local volunteers with community opportunities"
+authors = ["midorichie"]
+
+[contracts.main]
+path = "contracts/main.clar"
+
+[contracts.reputation]
+path = "contracts/reputation.clar"
+
+[repl.analysis]
+passes = ["check_checker"]
 
 [dependencies]
 # no external Clarity libs
 
 [networks]
-# local mock network
+# local mock network for development
 mock = { url = "http://127.0.0.1:20443" }
+
+# testnet configuration (for future deployment)
+# testnet = { url = "https://stacks-node-api.testnet.stacks.co" }
 
 [tests]
 dir = "tests"
+timeout = 30000
