@@ -1,0 +1,12 @@
+name = "local-volunteer-connector"
+version = "0.1.0"
+
+[dependencies]
+# no external Clarity libs
+
+[networks]
+# local mock network
+mock = { url = "http://127.0.0.1:20443" }
+
+[tests]
+dir = "tests"
